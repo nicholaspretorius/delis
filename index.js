@@ -1,10 +1,9 @@
 const express = require("express");
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+require("./start/db")();
+require("./start/routes")(app);
 
-app.get("/ping", (req, res) => {
-  res.send({ hello: "world!" });
-});
+const PORT = process.env.PORT || 7777;
 
-app.listen(PORT);
+app.listen(PORT, console.log(`Server running on ${PORT}...`));
