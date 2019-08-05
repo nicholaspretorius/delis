@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/reverse/:name", (req, res) => {
-  const reverse = [...req.params.name].reverse().join();
+  const reverse = [...req.params.name].reverse().join("");
   res.send(reverse);
 });
 
